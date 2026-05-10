@@ -4,20 +4,6 @@ A production-grade multi-brand marketplace built on **Next.js 14.2.15 + NestJS +
 
 ---
 
-## Version Collapse Fixes Applied
-
-| # | Problem | Fix |
-|---|---------|-----|
-| 1 | `middleware.ts` used async Next 15 pattern | Rewrote with synchronous `auth().protect()` from `@clerk/nextjs/server` |
-| 2 | Server components called Clerk/Stripe hooks (hydration 404) | Separated every interactive element into explicit `'use client'` components; server shells contain zero hooks |
-| 3 | API calls hit wrong URLs (missing `/api` prefix) | `lib/fetcher.ts` reads `NEXT_PUBLIC_API_URL` (set to `http://localhost:4000/api`); all calls go through `useApi()` hook |
-| 4 | CORS preflight failures on credentials requests | `main.ts` strips trailing slash from `FRONTEND_URL`, passes `credentials: true`, lists all methods |
-| 5 | Stripe webhook signature mismatch | `main.ts` sets `rawBody: true`; webhook controller reads `req.rawBody` |
-| 6 | Duplicate Stripe events created duplicate orders | `ProcessedEvent` table (keyed by Stripe event ID) + `stripeIntentId @unique` DB constraint |
-| 7 | Clerk/Stripe modals hidden behind background gradients | `globals.css` sets `.cl-rootBox`, `.cl-card` to `z-index: 9999`; chat widget is `z-[9990]`; UserButton wrapped in `z-[9999]` |
-
----
-
 ## Tech Stack (Pinned Versions)
 
 ### Frontend
