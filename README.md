@@ -1,4 +1,4 @@
-# Mallo — AI-Managed SaaS Mall (v2 Rewrite)
+# Mallo — AI-Managed SaaS Mall
 
 A production-grade multi-brand marketplace built on **Next.js 14.2.15 + NestJS + Clerk + Stripe Connect + LangChain**.
 
