@@ -58,7 +58,7 @@ docker run -d --name mallo-pg \
 
 ```bash
 cd backend
-cp .env.example .env
+cp .env 
 # Edit .env — fill in all keys (see table below)
 
 npm install
@@ -89,7 +89,7 @@ npm run start:dev       # → http://localhost:4000/api
 
 ```bash
 cd frontend
-cp .env.local.example .env.local
+cp .env.local
 # Fill in Clerk publishable key + Stripe publishable key
 
 npm install
