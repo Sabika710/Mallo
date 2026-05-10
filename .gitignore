@@ -1,4 +1,11 @@
-.env
-.env.local
-.env.sample
-node_modules/mailtrap token = 85c5e0121470ffa320.txt
+# Ignore all node_modules in any folder
+node_modules/
+**/node_modules/
+
+# Ignore Next.js and NestJS build files
+.next/
+dist/
+
+# Ignore environment variables and secrets
+.env*
+mailtrap token*.txt
