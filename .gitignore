@@ -1,0 +1,4 @@
+.env
+.env.local
+.env.sample
+node_modules/mailtrap token = 85c5e0121470ffa320.txt
